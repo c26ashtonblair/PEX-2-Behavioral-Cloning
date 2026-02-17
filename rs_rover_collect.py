@@ -123,8 +123,8 @@ def collect_data(bag_file):
         # Configure RealSense pipeline to save video
         pipeline = rs.pipeline()
         config = rs.config()
-        # TODO: enable recodring to file
-        # TODO: enable 8-bit rgb color stream stream, 640x480 @ 30 fps
+        config.enable_record_to_file(bag_file)
+        config.enable_stream(rs.stream.color, 640, 480, rs.format.rgb8, 30)
         
         #Start the stream
         pipeline.start(config)
@@ -143,16 +143,10 @@ def collect_data(bag_file):
             if not color_frame:
                 continue
             
-            # TODO: 
-            # (1) collect throttle, steering, heading (not required), and frame number
-            # example: throttle = int(connection.channels.get('3', 1500))  # Default neutral throttle
-            # heading = getattr(connection, 'heading', 0)
-            throttle = int(connection.channels.get('3'))
-            steering_mix = int(connection.channels[1])
+            throttle = int(connection.channels.get('3', 1500))
+            steering_mix = int(connection.channels.get('1', 1500))
             heading = getattr(connection, 'heading', 0)
-            # get frame number from your frame's "frame_number" property - might want to cast to be numeric
-            frm_num=int(frames.get_frame_number)
-            # Append details to your comma delimited file that's paired with your video bag
+            frm_num = int(color_frame.frame_number)
             append_ardu_data(frm_num, throttle, steering_mix, heading, file_name)
             
 
@@ -186,7 +180,7 @@ if __name__ == "__main__":
     os.makedirs(storage_root, exist_ok=True)
     
     print(f"Connecting to autopilot on {port} at {DEFAULT_BAUD} baud...")
-    connection = dl.connect_device(port, DEFAULT_BAUD, timeout=60)
+    connection = dl.connect_device(port, DEFAULT_BAUD)
     if not connection:
         logging.error("Failed to connect to the autopilot.")
         sys.exit(1)
