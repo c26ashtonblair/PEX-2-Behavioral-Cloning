@@ -12,8 +12,8 @@ import os
 from imutils.video import FPS
 
 # Paths for source and destination data
-SOURCE_PATH = "/rover_data"
-DEST_PATH = "/rover_data_processed"
+SOURCE_PATH = os.path.expanduser("~/rover_data")
+DEST_PATH = os.path.expanduser("~/rover_data_processed")
 
 # Parameters for image processing
 # Define the range of white values to be considered for binary conversion
