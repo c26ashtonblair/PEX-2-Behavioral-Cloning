@@ -12,8 +12,8 @@ import os
 from imutils.video import FPS
 
 # Paths for source and destination data
-SOURCE_PATH = "/media/usafa/data/rover_data"
-DEST_PATH = "/media/usafa/data/rover_data_processed"
+SOURCE_PATH = "/rover_data"
+DEST_PATH = "/rover_data_processed"
 
 # Parameters for image processing
 # Define the range of white values to be considered for binary conversion
@@ -80,8 +80,10 @@ def process_bag_file(source_file, dest_folder=None, skip_if_exists=True):
                 throttle, steering, heading = result[0]["throttle"], result[0]["steering"], result[0]["heading"]
                 color_frame = np.asanyarray(color_frame.get_data())
 
-                # TODO: Image processing using OpenCV:
-                Img_frame_placeholder = None
+                gray_frame = cv2.cvtColor(color_frame, cv2.COLOR_RGB2GRAY)
+                resized_frame = cv2.resize(gray_frame, (resize_W, resize_H), interpolation=cv2.INTER_AREA)
+                cropped_frame = resized_frame[crop_T:crop_B, :crop_W]
+                Img_frame_placeholder = cv2.inRange(cropped_frame, white_L, white_H)
                 # Save processed images WITH LABELS in the name
                 bw_frm_name = f"{int(frm_num):09d}_{throttle}_{steering}_{heading}_bw.png"
                 cv2.imwrite(os.path.join(dest_path, bw_frm_name), Img_frame_placeholder)
