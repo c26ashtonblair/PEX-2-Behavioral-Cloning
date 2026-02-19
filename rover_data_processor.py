@@ -57,14 +57,14 @@ def process_bag_file(source_file, dest_folder=None, skip_if_exists=True):
         # Allow time for pipeline to stabilize
         time.sleep(1)
         playback = pipeline.get_active_profile().get_device().as_playback()
-        playback.set_real_time(True)
+        playback.set_real_time(False)
         alignedFs = rs.align(rs.stream.color)
         fps = FPS().start()
 
         # Processing loop
         while playback.current_status() == rs.playback_status.playing:
             try:
-                playback.pause()  # Pause before getting frames
+                #playback.pause()  # Pause before getting frames
                 frames = pipeline.wait_for_frames(timeout_ms=5000)
                 aligned_frames = alignedFs.process(frames)
                 color_frame = aligned_frames.get_color_frame()
@@ -89,11 +89,11 @@ def process_bag_file(source_file, dest_folder=None, skip_if_exists=True):
                 cv2.imwrite(os.path.join(dest_path, bw_frm_name), Img_frame_placeholder)
                 fps.update()
                 
-                playback.resume()  # Resume after processing
+                #playback.resume()  # Resume after processing
 
             except Exception as e:
                 print(e)
-                playback.resume()  # Make sure to resume even on error
+                #playback.resume()  # Make sure to resume even on error
                 continue
     except Exception as e:
         print(e)
