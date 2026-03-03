@@ -106,7 +106,7 @@ def main():
     """Main function to drive the rover based on model predictions."""
    
     # Setup and connect to the rover
-    rover = dl.connect_device("/dev/ttyUSB0")
+    rover = dl.connect_device("/dev/ttyACM0")
 
     # Load the trained model
     model = get_model(MODEL_NAME)
