@@ -153,6 +153,7 @@ def main():
         print("Arm vehicle to start mission.")
         print("(CTRL-C to stop process)")
         while not rover.armed:
+            print("armed:", rover.armed, "mode:", rover.mode.name if rover.mode else None)
             time.sleep(1)
         
         # Initialize video capture
