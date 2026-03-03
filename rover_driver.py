@@ -155,9 +155,13 @@ def main():
         while not rover.armed:
             print("armed:", rover.armed, "mode:", rover.mode.name if rover.mode else None)
             time.sleep(1)
+
+        print("before pipeline")
         
         # Initialize video capture
         pipeline = initialize_pipeline()
+
+        print("after pipeline")
         
         while rover.armed:
             processed_image = get_video_data(pipeline)
