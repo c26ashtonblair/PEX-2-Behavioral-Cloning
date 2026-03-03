@@ -6,7 +6,7 @@ import pyrealsense2.pyrealsense2 as rs
 import time
 import numpy as np
 import cv2
-import keras
+import tensorflow as tf
 import utilities.drone_lib as dl
 
 # Path to the trained model weights
@@ -30,10 +30,42 @@ resize_W, resize_H = 160, 120  # Resized image dimensions
 crop_W, crop_B, crop_T = 160, 120, 40  # Crop box dimensions
 
 def get_model(filename):
-    """Load and compile the TensorFlow Keras model."""
-    model = keras.models.load_model(filename, compile=False)
+    """Load the model, with a compatibility fallback for older Keras runtimes."""
+    try:
+        model = tf.keras.models.load_model(filename, compile=False)
+        model.compile()
+        print("Loaded full model.")
+        return model
+    except TypeError as exc:
+        print(f"Full-model load failed ({exc}). Falling back to architecture+weights.")
+        model = define_inference_model(input_shape=(80, 160))
+        model.load_weights(filename)
+        print("Loaded model weights with local architecture.")
+        return model
+
+
+def define_inference_model(input_shape=(80, 160)):
+    """Architecture must match model_training.py exactly."""
+    model = tf.keras.Sequential(
+        [
+            tf.keras.layers.Input(shape=input_shape),
+            tf.keras.layers.Rescaling(1.0 / 255.0),
+            tf.keras.layers.Reshape((input_shape[0], input_shape[1], 1)),
+            tf.keras.layers.Conv2D(24, (5, 5), strides=(2, 2), activation="relu"),
+            tf.keras.layers.BatchNormalization(),
+            tf.keras.layers.Conv2D(36, (5, 5), strides=(2, 2), activation="relu"),
+            tf.keras.layers.BatchNormalization(),
+            tf.keras.layers.Conv2D(48, (3, 3), activation="relu"),
+            tf.keras.layers.MaxPooling2D((2, 2)),
+            tf.keras.layers.Dropout(0.25),
+            tf.keras.layers.Flatten(),
+            tf.keras.layers.Dense(128, activation="relu"),
+            tf.keras.layers.Dropout(0.3),
+            tf.keras.layers.Dense(64, activation="relu"),
+            tf.keras.layers.Dense(2, activation="linear"),
+        ]
+    )
     model.compile()
-    print("Loaded Model")
     return model
 
 def min_max_norm(val, v_min=1000.0, v_max=2000.0):
