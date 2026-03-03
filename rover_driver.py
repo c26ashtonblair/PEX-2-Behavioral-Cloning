@@ -28,6 +28,7 @@ rover.parameters['RC1_MIN']
 white_L, white_H = 200, 255  # White color range
 resize_W, resize_H = 160, 120  # Resized image dimensions
 crop_W, crop_B, crop_T = 160, 120, 40  # Crop box dimensions
+FRAME_TIMEOUT_MS = 1000
 
 def get_model(filename):
     """Load the model, with a compatibility fallback for older Keras runtimes."""
@@ -98,9 +99,15 @@ def initialize_pipeline(brg=False):
 
 def get_video_data(pipeline):
     """Capture a video frame, preprocess it, and prepare it for model prediction."""
-    frame = pipeline.wait_for_frames()
+    try:
+        frame = pipeline.wait_for_frames(timeout_ms=FRAME_TIMEOUT_MS)
+    except RuntimeError as exc:
+        print(f"Camera timeout waiting for frame ({FRAME_TIMEOUT_MS} ms): {exc}")
+        return None
+
     color_frame = frame.get_color_frame()
     if not color_frame:
+        print("Camera returned no color frame.")
         return None
 
     image = np.asanyarray(color_frame.get_data())
@@ -156,12 +163,12 @@ def main():
             print("armed:", rover.armed, "mode:", rover.mode.name if rover.mode else None)
             time.sleep(1)
 
-        print("before pipeline")
+        print("Armed detected, starting camera pipeline...")
         
         # Initialize video capture
         pipeline = initialize_pipeline()
 
-        print("after pipeline")
+        print("Camera pipeline started. Entering drive loop.")
         
         while rover.armed:
             processed_image = get_video_data(pipeline)
