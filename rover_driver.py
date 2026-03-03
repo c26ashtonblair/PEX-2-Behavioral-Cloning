@@ -10,7 +10,7 @@ import keras
 import utilities.drone_lib as dl
 
 # Path to the trained model weights
-MODEL_NAME = "models/V6.6_SGD_Batch115_664Steps/rover_model06_ver06_epoch0095_val_loss0.005095.h5"
+MODEL_NAME = "models/rover_model_01_ver01_final.h5"
 
 # Rover driving command limits
 MIN_STEERING, MAX_STEERING = 1000, 2000

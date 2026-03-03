@@ -22,6 +22,7 @@ white_L, white_H = 200, 255
 resize_W, resize_H = 160, 120
 # Crop dimensions to focus on relevant parts of the image
 crop_W, crop_B, crop_T = 160, 120, 40  # Crop from top third down
+PNG_COMPRESSION = 1  # 0-9 (lower is faster, larger files)
 
 def load_telem_file(path):
     """
@@ -29,7 +30,10 @@ def load_telem_file(path):
     """
     with open(path, "r") as f:
         dict_reader = csv.DictReader(f)
-        return list(dict_reader)
+        rows = list(dict_reader)
+        # Build O(1) lookup by logged index to avoid repeated linear scans.
+        lookup = {int(row["index"]): row for row in rows}
+        return lookup, rows
 
 def process_bag_file(source_file, dest_folder=None, skip_if_exists=True):
     """
@@ -46,11 +50,20 @@ def process_bag_file(source_file, dest_folder=None, skip_if_exists=True):
         dest_path = os.path.join(dest_folder or DEST_PATH, file_name)
         
         if skip_if_exists and os.path.isdir(dest_path):
-            print(f"{file_name} previously processed; skipping.")
-            return
+            existing_files = [
+                name for name in os.listdir(dest_path)
+                if os.path.isfile(os.path.join(dest_path, name))
+            ]
+            if existing_files:
+                print(f"{file_name} previously processed; skipping.")
+                return
+            print(f"{file_name} has empty output folder; reprocessing.")
 
         os.makedirs(dest_path, exist_ok=True)
-        frm_lookup = load_telem_file(source_file.replace(".bag", ".csv"))
+        frm_lookup, frm_rows = load_telem_file(source_file.replace(".bag", ".csv"))
+        processed_count = 0
+        skipped_count = 0
+        seq_idx = 0
 
         # Setup RealSense pipeline
         config, pipeline = rs.config(), rs.pipeline()
@@ -62,7 +75,6 @@ def process_bag_file(source_file, dest_folder=None, skip_if_exists=True):
         time.sleep(1)
         playback = pipeline.get_active_profile().get_device().as_playback()
         playback.set_real_time(False)
-        alignedFs = rs.align(rs.stream.color)
         fps = FPS().start()
 
         # Processing loop
@@ -70,19 +82,26 @@ def process_bag_file(source_file, dest_folder=None, skip_if_exists=True):
             try:
                 
                 frames = pipeline.wait_for_frames(timeout_ms=5000)
-                aligned_frames = alignedFs.process(frames)
-                color_frame = aligned_frames.get_color_frame()
-                #playback.pause()  # Pause before getting frames
+                color_frame = frames.get_color_frame()
+                if not color_frame:
+                    continue
 
                 # Skip if no telemetry data for frame
                 frm_num = color_frame.frame_number
-                result = [entry for entry in frm_lookup if entry["index"] == str(frm_num)]
-                if not result: 
-                    playback.resume()  # Resume before continuing
+                entry = frm_lookup.get(frm_num)
+                # Some recordings may not preserve frame_number values exactly.
+                # Fallback to sequential index mapping if needed.
+                if entry is None and seq_idx < len(frm_rows):
+                    entry = frm_lookup.get(seq_idx)
+                seq_idx += 1
+                if entry is None:
+                    skipped_count += 1
                     continue
                 
                 # Extract throttle, steering, and heading data
-                throttle, steering, heading = result[0]["throttle"], result[0]["steering"], result[0]["heading"]
+                throttle = entry["throttle"]
+                steering = entry["steering"]
+                heading = entry["heading"]
                 color_frame = np.asanyarray(color_frame.get_data())
 
                 gray_frame = cv2.cvtColor(color_frame, cv2.COLOR_RGB2GRAY)
@@ -91,14 +110,16 @@ def process_bag_file(source_file, dest_folder=None, skip_if_exists=True):
                 Img_frame_placeholder = cv2.inRange(cropped_frame, white_L, white_H)
                 # Save processed images WITH LABELS in the name
                 bw_frm_name = f"{int(frm_num):09d}_{throttle}_{steering}_{heading}_bw.png"
-                cv2.imwrite(os.path.join(dest_path, bw_frm_name), Img_frame_placeholder)
+                cv2.imwrite(
+                    os.path.join(dest_path, bw_frm_name),
+                    Img_frame_placeholder,
+                    [cv2.IMWRITE_PNG_COMPRESSION, PNG_COMPRESSION],
+                )
+                processed_count += 1
                 fps.update()
-                
-                playback.resume()  # Resume after processing
 
             except Exception as e:
                 print(e)
-                playback.resume()  # Make sure to resume even on error
                 continue
     except Exception as e:
         print(e)
@@ -110,7 +131,11 @@ def process_bag_file(source_file, dest_folder=None, skip_if_exists=True):
             playback.pause()
         if pipeline:
             pipeline.stop()
-        print(f"Finished {source_file}. FPS: {fps.fps() if fps else 'N/A'}")
+        print(
+            f"Finished {source_file}. FPS: {fps.fps() if fps else 'N/A'} | "
+            f"saved={processed_count if 'processed_count' in locals() else 0}, "
+            f"skipped={skipped_count if 'skipped_count' in locals() else 0}"
+        )
 
 def main():
     """
