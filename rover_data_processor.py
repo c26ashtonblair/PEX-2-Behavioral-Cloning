@@ -12,8 +12,8 @@ import os
 from imutils.video import FPS
 
 # Paths for source and destination data
-SOURCE_PATH = os.path.expanduser("~/rover_data")
-DEST_PATH = os.path.expanduser("~/rover_data_processed")
+SOURCE_PATH = "/home/usafa/Documents/PEX02/rover_data"
+DEST_PATH = "/home/usafa/Documents/PEX02/rover_data_processed"
 
 # Parameters for image processing
 # Define the range of white values to be considered for binary conversion
@@ -36,6 +36,10 @@ def process_bag_file(source_file, dest_folder=None, skip_if_exists=True):
     Processes a single .bag file, extracting frames and converting them to grayscale and binary images.
     Saves these images to a specified destination directory.
     """
+    fps = None
+    playback = None
+    pipeline = None
+
     try:
         print(f"Processing {source_file}...")
         file_name = os.path.basename(source_file.replace(".bag", ""))
@@ -64,11 +68,12 @@ def process_bag_file(source_file, dest_folder=None, skip_if_exists=True):
         # Processing loop
         while playback.current_status() == rs.playback_status.playing:
             try:
-                #playback.pause()  # Pause before getting frames
+                
                 frames = pipeline.wait_for_frames(timeout_ms=5000)
                 aligned_frames = alignedFs.process(frames)
                 color_frame = aligned_frames.get_color_frame()
-                
+                #playback.pause()  # Pause before getting frames
+
                 # Skip if no telemetry data for frame
                 frm_num = color_frame.frame_number
                 result = [entry for entry in frm_lookup if entry["index"] == str(frm_num)]
@@ -89,20 +94,22 @@ def process_bag_file(source_file, dest_folder=None, skip_if_exists=True):
                 cv2.imwrite(os.path.join(dest_path, bw_frm_name), Img_frame_placeholder)
                 fps.update()
                 
-                #playback.resume()  # Resume after processing
+                playback.resume()  # Resume after processing
 
             except Exception as e:
                 print(e)
-                #playback.resume()  # Make sure to resume even on error
+                playback.resume()  # Make sure to resume even on error
                 continue
     except Exception as e:
         print(e)
     finally:
         # Cleanup and stats
-        if fps: fps.stop()
+        if fps:
+            fps.stop()
         if playback and playback.current_status() == rs.playback_status.playing:
             playback.pause()
-            if pipeline: pipeline.stop()
+        if pipeline:
+            pipeline.stop()
         print(f"Finished {source_file}. FPS: {fps.fps() if fps else 'N/A'}")
 
 def main():

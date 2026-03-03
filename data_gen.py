@@ -6,7 +6,7 @@ data_gen.py
 import cv2
 import os
 import glob
-from random import shuffle
+import random
 import numpy as np
 
 # Constants defining the range of steering and throttle values
@@ -65,7 +65,11 @@ def get_sample_series_list(root_folder, sequence_size=13,
 
     if shuffle_series:
         # Shuffle the order of sequences so that they are not contiguous.
-        shuffle(samples, random =random_state)
+        if random_state is None:
+            random.shuffle(samples)
+        else:
+            rng = random.Random(random_state)
+            rng.shuffle(samples)
 
     return samples
 

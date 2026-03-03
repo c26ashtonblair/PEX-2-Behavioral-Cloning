@@ -47,7 +47,7 @@ def invert_min_max_norm(val, v_min=1000.0, v_max=2000.0):
 def denormalize(steering, throttle):
     """Denormalize steering and throttle values to the rover's command range."""
     steering = invert_min_max_norm(steering, MIN_STEERING, MAX_STEERING)
-    throttle = invert_min_max_norm(steering, MIN_THROTTLE, MAX_THROTTLE)
+    throttle = invert_min_max_norm(throttle, MIN_THROTTLE, MAX_THROTTLE)
     return steering, throttle
 
 def initialize_pipeline(brg=False):
@@ -59,8 +59,8 @@ def initialize_pipeline(brg=False):
         config.enable_stream(rs.stream.color, 
                              640, 480, rs.format.bgr8, 30)
     else:
-        config.enable_stream(rs.stream.color, 640, 480, 
-                             rs.format.rgb, 30)
+        config.enable_stream(rs.stream.color, 640, 480,
+                             rs.format.rgb8, 30)
     pipeline.start(config)
     return pipeline
 
@@ -72,16 +72,17 @@ def get_video_data(pipeline):
         return None
 
     image = np.asanyarray(color_frame.get_data())
-    
-    #TODO: process your incoming frame so that it is 
-    #      in the form required to feed into your CNN.
-    # Maybe resize
-    # perhaps convert to gray
-    # turn into B&W (using cv.inRange)
-    # Perform cropping (if any)
-    # etc...
 
-    return image
+    # Match training preprocessing in rover_data_processor.py:
+    # RGB -> Gray -> Resize(160x120) -> Crop[40:120, 0:160] -> Binary threshold (inRange)
+    gray_frame = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
+    resized_frame = cv2.resize(gray_frame, (resize_W, resize_H), interpolation=cv2.INTER_AREA)
+    cropped_frame = resized_frame[crop_T:crop_B, :crop_W]
+    bw_frame = cv2.inRange(cropped_frame, white_L, white_H)
+
+    # Model expects batches; training used (80, 160) grayscale inputs.
+    model_input = np.expand_dims(bw_frame, axis=0)
+    return model_input
 
 def set_rover_data(rover, steering, throttle):
     """Set rover control commands, ensuring they're within the valid range."""
@@ -132,17 +133,14 @@ def main():
                 continue
 
             # Predict steering and throttle from the processed image
-            #TODO: get model predictions
+            output = model.predict(processed_image, verbose=0)
 
-            #output = get_prdictions
-            
-            # Note that you may denormalize values now, 
-            # if you trained your model on normalized values.
-            #steering, throttle = denormalize(output[0][0], output[0][1])
-            
-            # Next, send predicted values to rover to be executed
-            # Note: this is where your model drives!
-            #set_rover_data(rover, steering, throttle)
+            # Model outputs normalized labels [steering, throttle]
+            steering, throttle = denormalize(output[0][0], output[0][1])
+            steering, throttle = check_inputs(int(steering), int(throttle))
+
+            # Send predicted values to rover
+            set_rover_data(rover, steering, throttle)
 
         # stop recording
         pipeline.stop()
