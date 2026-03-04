@@ -16,7 +16,7 @@ MODEL_NAME = "models/rover_model_02_ver01_final.h5"
 # Rover driving command limits
 MIN_STEERING, MAX_STEERING = 1000, 2000
 MIN_THROTTLE, MAX_THROTTLE = 1500, 2000
-SAFE_MIN_THROTTLE, SAFE_MAX_THROTTLE = 1300, 1700
+SAFE_MIN_THROTTLE, SAFE_MAX_THROTTLE = 1300, 1550
 MAX_THROTTLE_STEP = 8
 WARMUP_FRAMES = 25
 
@@ -33,9 +33,9 @@ white_L, white_H = 200, 255  # White color range
 resize_W, resize_H = 160, 120  # Resized image dimensions
 crop_W, crop_B, crop_T = 160, 120, 40  # Crop box dimensions
 FRAME_TIMEOUT_MS = 1000
-SAVE_DEBUG_FRAMES = True
-DEBUG_FRAME_COUNT = 40
-DEBUG_FRAME_ROOT = "runtime_debug_frames"
+# SAVE_DEBUG_FRAMES = True
+# DEBUG_FRAME_COUNT = 40
+# DEBUG_FRAME_ROOT = "runtime_debug_frames"
 
 def get_model(filename):
     """Load the model, with a compatibility fallback for older Keras runtimes."""
@@ -183,12 +183,12 @@ def main():
         print("Camera pipeline started. Entering drive loop.")
         frame_count = 0
         last_throttle = SAFE_MIN_THROTTLE
-        debug_saved = 0
-        debug_dir = None
-        if SAVE_DEBUG_FRAMES:
-            debug_dir = os.path.join(DEBUG_FRAME_ROOT, time.strftime("session_%Y%m%d-%H%M%S"))
-            os.makedirs(debug_dir, exist_ok=True)
-            print(f"Saving first {DEBUG_FRAME_COUNT} preprocessed frames to: {debug_dir}")
+        # debug_saved = 0
+        # debug_dir = None
+        # if SAVE_DEBUG_FRAMES:
+        #     debug_dir = os.path.join(DEBUG_FRAME_ROOT, time.strftime("session_%Y%m%d-%H%M%S"))
+        #     os.makedirs(debug_dir, exist_ok=True)
+        #     print(f"Saving first {DEBUG_FRAME_COUNT} preprocessed frames to: {debug_dir}")
         
         while rover.armed:
             processed_image = get_video_data(pipeline)
@@ -196,12 +196,12 @@ def main():
                 print("No image from camera.")
                 continue
 
-            if SAVE_DEBUG_FRAMES and debug_saved < DEBUG_FRAME_COUNT:
-                debug_file = os.path.join(debug_dir, f"frame_{debug_saved:04d}_bw.png")
-                cv2.imwrite(debug_file, processed_image[0])
-                debug_saved += 1
-                if debug_saved == DEBUG_FRAME_COUNT:
-                    print(f"Saved {DEBUG_FRAME_COUNT} debug frames to: {debug_dir}")
+            # if SAVE_DEBUG_FRAMES and debug_saved < DEBUG_FRAME_COUNT:
+            #     debug_file = os.path.join(debug_dir, f"frame_{debug_saved:04d}_bw.png")
+            #     cv2.imwrite(debug_file, processed_image[0])
+            #     debug_saved += 1
+            #     if debug_saved == DEBUG_FRAME_COUNT:
+            #         print(f"Saved {DEBUG_FRAME_COUNT} debug frames to: {debug_dir}")
 
             # Predict steering and throttle from the processed image
             output = model.predict(processed_image, verbose=0)
