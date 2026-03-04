@@ -16,7 +16,7 @@ MODEL_NAME = "models/rover_model_02_ver01_final.h5"
 # Rover driving command limits
 MIN_STEERING, MAX_STEERING = 1000, 2000
 MIN_THROTTLE, MAX_THROTTLE = 1500, 2000
-SAFE_MIN_THROTTLE, SAFE_MAX_THROTTLE = 1500, 1580
+SAFE_MIN_THROTTLE, SAFE_MAX_THROTTLE = 1300, 1700
 MAX_THROTTLE_STEP = 8
 WARMUP_FRAMES = 25
 
@@ -106,10 +106,15 @@ def initialize_pipeline(brg=False):
 
 def get_video_data(pipeline):
     """Capture a video frame, preprocess it, and prepare it for model prediction."""
-    try:
-        frame = pipeline.wait_for_frames(timeout_ms=FRAME_TIMEOUT_MS)
-    except RuntimeError as exc:
-        print(f"Camera timeout waiting for frame ({FRAME_TIMEOUT_MS} ms): {exc}")
+    deadline = time.monotonic() + (FRAME_TIMEOUT_MS / 1000.0)
+    frame = None
+    while time.monotonic() < deadline:
+        frame = pipeline.poll_for_frames()
+        if frame:
+            break
+        time.sleep(0.005)
+    if not frame:
+        print(f"Camera timeout waiting for frame ({FRAME_TIMEOUT_MS} ms).")
         return None
 
     color_frame = frame.get_color_frame()
