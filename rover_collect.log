@@ -1,0 +1,381 @@
+2026-02-17 10:41:27,443 [INFO ]  Connecting to device /dev/ttyACM0 with baud rate 115200...
+2026-02-17 10:41:27,806 [DEBUG]  mav recv error: invalid MAVLink prefix '0'
+2026-02-17 10:41:27,811 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,812 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,812 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,813 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,814 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,815 [INFO ]  Initialising APM
+2026-02-17 10:41:27,815 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,816 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,816 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,817 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,818 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,818 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,819 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,820 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,821 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,822 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,822 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,823 [INFO ]  Initialising APM
+2026-02-17 10:41:27,824 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,824 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,825 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,826 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,827 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,827 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,828 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,829 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,830 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,831 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,831 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,832 [INFO ]  Initialising APM
+2026-02-17 10:41:27,833 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,833 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,834 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,835 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,836 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,836 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,837 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,838 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,838 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,839 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,840 [INFO ]  Initialising APM
+2026-02-17 10:41:27,841 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,842 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,842 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-17 10:41:27,843 [INFO ]  Ready to drive
+2026-02-17 10:41:27,873 [INFO ]  EKF2 IMU1 tilt alignment complete
+2026-02-17 10:41:27,873 [INFO ]  EKF2 IMU0 tilt alignment complete
+2026-02-17 10:41:27,874 [WARNI]  EKF2 IMU1 forced reset
+2026-02-17 10:41:27,875 [INFO ]  EKF2 IMU1 initial yaw alignment complete
+2026-02-17 10:41:27,875 [INFO ]  EKF2 IMU1 tilt alignment complete
+2026-02-17 10:41:27,880 [WARNI]  EKF2 IMU1 forced reset
+2026-02-17 10:41:27,881 [INFO ]  EKF2 IMU0 initial yaw alignment complete
+2026-02-17 10:41:27,882 [INFO ]  EKF2 IMU1 initial yaw alignment complete
+2026-02-17 10:41:27,882 [INFO ]  EKF2 IMU1 tilt alignment complete
+2026-02-17 10:41:27,883 [INFO ]  EKF2 IMU0 tilt alignment complete
+2026-02-17 10:41:27,927 [INFO ]  ArduRover V4.0.0 (0e52bafa)
+2026-02-17 10:41:27,928 [INFO ]  ChibiOS: 0997003f
+2026-02-17 10:41:27,929 [INFO ]  Pixhawk1 0033001E 31355104 33333832
+2026-02-17 10:41:29,016 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-17 10:41:30,019 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-17 10:41:31,021 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-17 10:41:31,323 [INFO ]  Device connected.
+2026-02-17 10:41:31,324 [INFO ]  Device version: APM:Rover-None.None.NoneUnknownReleaseType, log=
+2026-02-17 10:41:56,453 [WARNI]  EKF2 IMU0 forced reset
+2026-02-17 10:41:56,512 [INFO ]  EKF2 IMU0 initial yaw alignment complete
+2026-02-17 10:41:56,552 [WARNI]  EKF2 IMU1 forced reset
+2026-02-17 10:41:56,611 [INFO ]  EKF2 IMU1 initial yaw alignment complete
+2026-02-17 10:42:01,991 [INFO ]  EKF2 IMU0 tilt alignment complete
+2026-02-17 10:42:02,053 [INFO ]  EKF2 IMU1 tilt alignment complete
+2026-02-17 10:42:54,659 [WARNI]  EKF2 IMU0 forced reset
+2026-02-17 10:42:54,719 [INFO ]  EKF2 IMU0 initial yaw alignment complete
+2026-02-17 10:42:54,759 [WARNI]  EKF2 IMU1 forced reset
+2026-02-17 10:42:54,819 [INFO ]  EKF2 IMU1 initial yaw alignment complete
+2026-02-17 10:43:00,218 [INFO ]  EKF2 IMU0 tilt alignment complete
+2026-02-17 10:43:00,237 [INFO ]  EKF2 IMU1 tilt alignment complete
+2026-02-17 10:43:26,091 [DEBUG]  RCInput: decoding SBUS
+2026-02-17 10:43:26,100 [INFO ]  Failsafe ended
+2026-02-17 10:43:36,283 [DEBUG]  mav recv error: invalid MAVLink prefix '85'
+2026-02-17 10:43:36,292 [INFO ]  Throttle armed
+2026-02-19 10:17:43,186 [INFO ]  Connecting to device /dev/ttyACM0 with baud rate 115200...
+2026-02-19 10:17:43,370 [DEBUG]  mav recv error: invalid MAVLink prefix '0'
+2026-02-19 10:17:43,386 [INFO ]  EKF2 IMU0 initial yaw alignment complete
+2026-02-19 10:17:43,387 [INFO ]  EKF2 IMU1 initial yaw alignment complete
+2026-02-19 10:17:43,401 [INFO ]  EKF2 IMU1 tilt alignment complete
+2026-02-19 10:17:43,402 [INFO ]  EKF2 IMU0 tilt alignment complete
+2026-02-19 10:17:43,403 [WARNI]  EKF2 IMU0 forced reset
+2026-02-19 10:17:43,403 [INFO ]  EKF2 IMU0 initial yaw alignment complete
+2026-02-19 10:17:43,410 [INFO ]  EKF2 IMU0 tilt alignment complete
+2026-02-19 10:17:43,488 [INFO ]  ArduRover V4.0.0 (0e52bafa)
+2026-02-19 10:17:43,489 [INFO ]  ChibiOS: 0997003f
+2026-02-19 10:17:43,490 [INFO ]  Pixhawk1 0033001E 31355104 33333832
+2026-02-19 10:17:44,581 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-19 10:17:45,584 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-19 10:17:46,586 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-19 10:17:46,787 [INFO ]  Device connected.
+2026-02-19 10:17:46,788 [INFO ]  Device version: APM:Rover-None.None.NoneUnknownReleaseType, log=
+2026-02-19 10:17:50,914 [DEBUG]  RCInput: decoding SBUS
+2026-02-19 10:17:50,932 [INFO ]  Failsafe ended
+2026-02-19 10:18:05,837 [DEBUG]  mav recv error: invalid MAVLink prefix '85'
+2026-02-19 10:18:05,847 [INFO ]  Throttle armed
+2026-02-19 10:30:31,284 [INFO ]  Connecting to device /dev/ttyACM0 with baud rate 115200...
+2026-02-19 10:30:31,322 [DEBUG]  mav recv error: invalid MAVLink prefix '0'
+2026-02-19 10:30:31,367 [INFO ]  Throttle armed
+2026-02-19 10:30:31,368 [WARNI]  EKF2 IMU0 ground mag anomaly, yaw re-aligned
+2026-02-19 10:30:31,368 [WARNI]  EKF2 IMU1 ground mag anomaly, yaw re-aligned
+2026-02-19 10:30:31,369 [INFO ]  Throttle disarmed
+2026-02-19 10:30:31,369 [INFO ]  Throttle armed
+2026-02-19 10:30:31,435 [INFO ]  ArduRover V4.0.0 (0e52bafa)
+2026-02-19 10:30:31,436 [INFO ]  ChibiOS: 0997003f
+2026-02-19 10:30:31,436 [INFO ]  Pixhawk1 0033001E 31355104 33333832
+2026-02-19 10:30:32,526 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-19 10:30:33,529 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-19 10:30:34,531 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-19 10:30:34,733 [INFO ]  Device connected.
+2026-02-19 10:30:34,733 [INFO ]  Device version: APM:Rover-None.None.NoneUnknownReleaseType, log=
+2026-02-19 10:31:16,857 [INFO ]  Connecting to device /dev/ttyACM0 with baud rate 115200...
+2026-02-19 10:31:16,893 [DEBUG]  mav recv error: invalid MAVLink prefix '1'
+2026-02-19 10:31:17,011 [INFO ]  ArduRover V4.0.0 (0e52bafa)
+2026-02-19 10:31:17,012 [INFO ]  ChibiOS: 0997003f
+2026-02-19 10:31:17,012 [INFO ]  Pixhawk1 0033001E 31355104 33333832
+2026-02-19 10:31:18,100 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-19 10:31:18,277 [INFO ]  Throttle armed
+2026-02-19 10:31:19,103 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-19 10:31:20,105 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-19 10:31:20,307 [INFO ]  Device connected.
+2026-02-19 10:31:20,307 [INFO ]  Device version: APM:Rover-None.None.NoneUnknownReleaseType, log=
+2026-02-23 10:03:01,894 [INFO ]  Connecting to device /dev/ttyACM0 with baud rate 115200...
+2026-02-23 10:03:02,094 [DEBUG]  mav recv error: invalid MAVLink prefix '56'
+2026-02-23 10:03:02,134 [INFO ]  EKF2 IMU0 initial yaw alignment complete
+2026-02-23 10:03:02,135 [INFO ]  EKF2 IMU1 initial yaw alignment complete
+2026-02-23 10:03:02,141 [WARNI]  Failsafe trigger 0x1
+2026-02-23 10:03:02,141 [INFO ]  EKF2 IMU0 tilt alignment complete
+2026-02-23 10:03:02,142 [INFO ]  EKF2 IMU1 tilt alignment complete
+2026-02-23 10:03:04,209 [INFO ]  ArduRover V4.0.0 (0e52bafa)
+2026-02-23 10:03:04,210 [INFO ]  ChibiOS: 0997003f
+2026-02-23 10:03:04,211 [INFO ]  Pixhawk1 0033001E 31355104 33333832
+2026-02-23 10:03:05,305 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-23 10:03:06,308 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-23 10:03:07,311 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-23 10:03:08,314 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-23 10:03:08,415 [INFO ]  Device connected.
+2026-02-23 10:03:08,416 [INFO ]  Device version: APM:Rover-4.0.0, log=
+2026-02-23 10:03:10,858 [DEBUG]  RCInput: decoding SBUS
+2026-02-23 10:03:10,868 [INFO ]  Failsafe ended
+2026-02-23 10:03:27,531 [DEBUG]  mav recv error: invalid MAVLink prefix '85'
+2026-02-23 10:03:27,542 [INFO ]  Throttle armed
+2026-02-23 10:06:09,596 [INFO ]  Connecting to device /dev/ttyACM0 with baud rate 115200...
+2026-02-23 10:06:09,634 [DEBUG]  mav recv error: invalid MAVLink prefix '6'
+2026-02-23 10:06:09,743 [INFO ]  ArduRover V4.0.0 (0e52bafa)
+2026-02-23 10:06:09,744 [INFO ]  ChibiOS: 0997003f
+2026-02-23 10:06:09,744 [INFO ]  Pixhawk1 0033001E 31355104 33333832
+2026-02-23 10:06:10,838 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-23 10:06:11,841 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-23 10:06:12,844 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-23 10:06:13,145 [INFO ]  Device connected.
+2026-02-23 10:06:13,146 [INFO ]  Device version: APM:Rover-None.None.NoneUnknownReleaseType, log=
+2026-02-23 10:06:13,862 [WARNI]  Failsafe trigger 0x1
+2026-02-23 10:06:14,603 [INFO ]  Failsafe ended
+2026-02-23 10:06:29,122 [INFO ]  Throttle armed
+2026-02-23 10:15:56,395 [INFO ]  Connecting to device /dev/ttyACM0 with baud rate 115200...
+2026-02-23 10:15:56,580 [DEBUG]  mav recv error: invalid MAVLink prefix '99'
+2026-02-23 10:15:56,584 [DEBUG]  mav recv error: invalid MAVLink prefix '73'
+2026-02-23 10:15:56,585 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-23 10:15:56,586 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-23 10:15:56,587 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-23 10:15:56,588 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-23 10:15:56,589 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-23 10:15:56,590 [INFO ]  Initialising APM
+2026-02-23 10:15:56,591 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-23 10:15:56,592 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-23 10:15:56,592 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-23 10:15:56,593 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-23 10:15:56,594 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-23 10:15:56,595 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-23 10:15:56,596 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-23 10:15:56,596 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-23 10:15:56,597 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-23 10:15:56,598 [DEBUG]  mav recv error: invalid MAVLink prefix '13'
+2026-02-23 10:15:56,599 [INFO ]  Ready to drive
+2026-02-23 10:15:56,637 [INFO ]  EKF2 IMU0 initial yaw alignment complete
+2026-02-23 10:15:56,638 [INFO ]  EKF2 IMU1 initial yaw alignment complete
+2026-02-23 10:15:56,643 [DEBUG]  mav recv error: invalid MAVLink prefix '85'
+2026-02-23 10:15:56,648 [INFO ]  EKF2 IMU0 tilt alignment complete
+2026-02-23 10:15:56,648 [INFO ]  EKF2 IMU1 tilt alignment complete
+2026-02-23 10:15:56,649 [INFO ]  Throttle armed
+2026-02-23 10:15:57,314 [INFO ]  Throttle disarmed
+2026-02-23 10:15:58,695 [INFO ]  ArduRover V4.0.0 (0e52bafa)
+2026-02-23 10:15:58,696 [INFO ]  ChibiOS: 0997003f
+2026-02-23 10:15:58,697 [INFO ]  Pixhawk1 0033001E 31355104 33333832
+2026-02-23 10:15:59,789 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-23 10:16:00,823 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-23 10:16:01,825 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-23 10:16:02,827 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-23 10:16:03,129 [INFO ]  Device connected.
+2026-02-23 10:16:03,130 [INFO ]  Device version: APM:Rover-4.0.0, log=
+2026-02-23 10:16:08,817 [INFO ]  Throttle armed
+2026-02-23 10:26:49,634 [INFO ]  Connecting to device /dev/ttyACM0 with baud rate 115200...
+2026-02-23 10:26:49,686 [DEBUG]  mav recv error: invalid MAVLink prefix '0'
+2026-02-23 10:26:49,723 [INFO ]  EKF2 IMU0 initial yaw alignment complete
+2026-02-23 10:26:49,724 [INFO ]  EKF2 IMU1 initial yaw alignment complete
+2026-02-23 10:26:49,727 [DEBUG]  mav recv error: invalid MAVLink prefix '85'
+2026-02-23 10:26:49,730 [INFO ]  Throttle armed
+2026-02-23 10:26:49,731 [INFO ]  EKF2 IMU0 tilt alignment complete
+2026-02-23 10:26:49,732 [INFO ]  EKF2 IMU1 tilt alignment complete
+2026-02-23 10:26:49,749 [INFO ]  Throttle disarmed
+2026-02-23 10:26:49,814 [INFO ]  ArduRover V4.0.0 (0e52bafa)
+2026-02-23 10:26:49,815 [INFO ]  ChibiOS: 0997003f
+2026-02-23 10:26:49,816 [INFO ]  Pixhawk1 0033001E 31355104 33333832
+2026-02-23 10:26:50,890 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-23 10:26:51,894 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-23 10:26:52,897 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-23 10:26:53,040 [INFO ]  Throttle armed
+2026-02-23 10:26:53,299 [INFO ]  Device connected.
+2026-02-23 10:26:53,300 [INFO ]  Device version: APM:Rover-None.None.NoneUnknownReleaseType, log=
+2026-02-23 10:28:32,148 [INFO ]  Connecting to device /dev/ttyACM0 with baud rate 115200...
+2026-02-23 10:28:32,186 [DEBUG]  mav recv error: invalid MAVLink prefix '0'
+2026-02-23 10:28:32,230 [INFO ]  Throttle armed
+2026-02-23 10:28:32,231 [INFO ]  Throttle disarmed
+2026-02-23 10:28:32,316 [INFO ]  ArduRover V4.0.0 (0e52bafa)
+2026-02-23 10:28:32,317 [INFO ]  ChibiOS: 0997003f
+2026-02-23 10:28:32,317 [INFO ]  Pixhawk1 0033001E 31355104 33333832
+2026-02-23 10:28:33,392 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-23 10:28:34,394 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-23 10:28:35,398 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-23 10:28:35,799 [INFO ]  Device connected.
+2026-02-23 10:28:35,800 [INFO ]  Device version: APM:Rover-None.None.NoneUnknownReleaseType, log=
+2026-02-23 10:28:37,837 [INFO ]  Throttle armed
+2026-02-23 10:30:35,695 [INFO ]  Connecting to device /dev/ttyACM0 with baud rate 115200...
+2026-02-23 10:30:35,732 [DEBUG]  mav recv error: invalid MAVLink prefix '0'
+2026-02-23 10:30:35,773 [INFO ]  Throttle armed
+2026-02-23 10:30:35,774 [INFO ]  Throttle disarmed
+2026-02-23 10:30:35,775 [INFO ]  Throttle armed
+2026-02-23 102026-02-27 10:29:59,552 [INFO ]  Connecting to device /dev/ttyACM0 with baud rate 115200...
+2026-02-27 10:29:59,737 [DEBUG]  mav recv error: invalid MAVLink prefix '10'
+2026-02-27 10:29:59,742 [DEBUG]  mav recv error: invalid MAVLink prefix '42'
+2026-02-27 10:29:59,743 [DEBUG]  mav recv error: invalid MAVLink prefix '13'
+2026-02-27 10:29:59,744 [INFO ]  Ready to drive
+2026-02-27 10:29:59,783 [INFO ]  EKF2 IMU0 initial yaw alignment complete
+2026-02-27 10:29:59,784 [INFO ]  EKF2 IMU1 initial yaw alignment complete
+2026-02-27 10:29:59,787 [DEBUG]  mav recv error: invalid MAVLink prefix '85'
+2026-02-27 10:29:59,791 [INFO ]  EKF2 IMU0 tilt alignment complete
+2026-02-27 10:29:59,792 [DEBUG]  RCInput: decoding SBUS
+2026-02-27 10:29:59,792 [INFO ]  Failsafe ended
+2026-02-27 10:29:59,793 [INFO ]  Throttle armed
+2026-02-27 10:29:59,793 [INFO ]  Throttle disarmed
+2026-02-27 10:29:59,852 [INFO ]  ArduRover V4.0.0 (0e52bafa)
+2026-02-27 10:29:59,853 [INFO ]  ChibiOS: 0997003f
+2026-02-27 10:29:59,854 [INFO ]  Pixhawk1 0033001E 31355104 33333832
+2026-02-27 10:30:00,943 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-27 10:30:01,947 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-27 10:30:02,950 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-27 10:30:03,151 [INFO ]  Device connected.
+2026-02-27 10:30:03,152 [INFO ]  Device version: APM:Rover-None.None.NoneUnknownReleaseType, log=
+2026-02-27 10:30:09,219 [INFO ]  Throttle armed
+2026-02-27 10:32:47,484 [INFO ]  Connecting to device /dev/ttyACM0 with baud rate 115200...
+2026-02-27 10:32:47,523 [DEBUG]  mav recv error: invalid MAVLink prefix '240'
+2026-02-27 10:32:47,635 [INFO ]  ArduRover V4.0.0 (0e52bafa)
+2026-02-27 10:32:47,636 [INFO ]  ChibiOS: 0997003f
+2026-02-27 10:32:47,636 [INFO ]  Pixhawk1 0033001E 31355104 33333832
+2026-02-27 10:32:48,725 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-27 10:32:49,596 [INFO ]  Throttle armed
+2026-02-27 10:32:49,728 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-27 10:32:50,730 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-27 10:32:51,032 [INFO ]  Device connected.
+2026-02-27 10:32:51,032 [INFO ]  Device version: APM:Rover-None.None.NoneUnknownReleaseType, log=
+2026-02-27 10:35:17,228 [INFO ]  Connecting to device /dev/ttyACM0 with baud rate 115200...
+2026-02-27 10:35:17,546 [DEBUG]  mav recv error: invalid MAVLink prefix '111'
+2026-02-27 10:35:17,654 [INFO ]  ArduRover V4.0.0 (0e52bafa)
+2026-02-27 10:35:17,654 [INFO ]  ChibiOS: 0997003f
+2026-02-27 10:35:17,655 [INFO ]  Pixhawk1 0033001E 31355104 33333832
+2026-02-27 10:35:18,748 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-27 10:35:19,750 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-27 10:35:20,395 [INFO ]  Throttle armed
+2026-02-27 10:35:20,753 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-27 10:35:21,054 [INFO ]  Device connected.
+2026-02-27 10:35:21,055 [INFO ]  Device version: APM:Rover-None.None.NoneUnknownReleaseType, log=
+2026-02-27 10:38:21,918 [INFO ]  Connecting to device /dev/ttyACM0 with baud rate 115200...
+2026-02-27 10:38:21,956 [DEBUG]  mav recv error: invalid MAVLink prefix '24'
+2026-02-27 10:38:22,067 [INFO ]  ArduRover V4.0.0 (0e52bafa)
+2026-02-27 10:38:22,068 [INFO ]  ChibiOS: 0997003f
+2026-02-27 10:38:22,068 [INFO ]  Pixhawk1 0033001E 31355104 33333832
+2026-02-27 10:38:23,161 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-27 10:38:24,163 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-27 10:38:25,165 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-27 10:38:26,168 [DEBUG]  Still waiting for data from vehicle: 
+2026-02-27 10:38:26,170 [INFO ]  Device connected.
+2026-02-27 10:38:26,172 [INFO ]  Device version: APM:Rover-4.0.0, log=
+2026-02-27 10:38:53,584 [INFO ]  Throttle armed
+2026-02-27 10:44:29,333 [INFO ]  Connecting to device /dev/ttyACM0 with baud rate 115200...
+2026-02-27 10:44:29,784 [DEBUG]  mav recv error: invalid MAVLink prefix '1'
+2026-02-27 10:44:29,908 [INFO ]  ArduRover V4.0.0 (0e52bafa)
+2026-02-27 10:44:29,909 [INFO ]  ChibiOS: 0997003f
+2026-02-27 10:44:29,910 [INFO ]  Pixhawk1 0033001E 31355104 33333832
+2026-02-27 10:44:30,988 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-27 10:44:31,991 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-27 10:44:32,994 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-02-27 10:44:33,296 [INFO ]  Device connected.
+2026-02-27 10:44:33,296 [INFO ]  Device version: APM:Rover-None.None.NoneUnknownReleaseType, log=
+2026-02-27 10:44:35,868 [INFO ]  Throttle armed
+2026-03-03 10:00:48,594 [INFO ]  Connecting to device /dev/ttyACM0 with baud rate 115200...
+2026-03-03 10:00:48,779 [DEBUG]  mav recv error: invalid MAVLink prefix '203'
+2026-03-03 10:00:48,792 [DEBUG]  mav recv error: invalid MAVLink prefix '85'
+2026-03-03 10:00:48,799 [INFO ]  Throttle armed
+2026-03-03 10:00:48,820 [INFO ]  EKF2 IMU0 initial yaw alignment complete
+2026-03-03 10:00:48,821 [INFO ]  EKF2 IMU1 initial yaw alignment complete
+2026-03-03 10:00:48,829 [INFO ]  EKF2 IMU0 tilt alignment complete
+2026-03-03 10:00:48,830 [INFO ]  EKF2 IMU1 tilt alignment complete
+2026-03-03 10:00:48,830 [WARNI]  Battery 1 is low 0.50V used 2 mAh
+2026-03-03 10:00:48,831 [INFO ]  Throttle disarmed
+2026-03-03 10:00:48,844 [INFO ]  Throttle armed
+2026-03-03 10:00:48,844 [INFO ]  Throttle disarmed
+2026-03-03 10:00:48,893 [INFO ]  ArduRover V4.0.0 (0e52bafa)
+2026-03-03 10:00:48,894 [INFO ]  ChibiOS: 0997003f
+2026-03-03 10:00:48,895 [INFO ]  Pixhawk1 0033001E 31355104 33333832
+2026-03-03 10:00:49,983 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-03-03 10:00:50,986 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-03-03 10:00:51,989 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-03-03 10:00:52,291 [INFO ]  Device connected.
+2026-03-03 10:00:52,292 [INFO ]  Device version: APM:Rover-None.None.NoneUnknownReleaseType, log=
+2026-03-03 10:01:07,572 [INFO ]  Throttle armed
+2026-03-03 10:02:02,762 [INFO ]  Connecting to device /dev/ttyACM0 with baud rate 115200...
+2026-03-03 10:02:02,800 [DEBUG]  mav recv error: invalid MAVLink prefix '24'
+2026-03-03 10:02:02,849 [INFO ]  Throttle armed
+2026-03-03 10:02:02,849 [INFO ]  Throttle disarmed
+2026-03-03 10:02:02,917 [INFO ]  ArduRover V4.0.0 (0e52bafa)
+2026-03-03 10:02:02,918 [INFO ]  ChibiOS: 0997003f
+2026-03-03 10:02:02,919 [INFO ]  Pixhawk1 0033001E 31355104 33333832
+2026-03-03 10:02:04,006 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-03-03 10:02:05,008 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-03-03 10:02:06,010 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-03-03 10:02:06,211 [INFO ]  Device connected.
+2026-03-03 10:02:06,212 [INFO ]  Device version: APM:Rover-None.None.NoneUnknownReleaseType, log=
+2026-03-03 10:02:09,900 [INFO ]  Throttle armed
+2026-03-03 10:07:21,609 [INFO ]  Connecting to device /dev/ttyACM0 with baud rate 115200...
+2026-03-03 10:07:22,059 [DEBUG]  mav recv error: invalid MAVLink prefix '0'
+2026-03-03 10:07:22,178 [INFO ]  ArduRover V4.0.0 (0e52bafa)
+2026-03-03 10:07:22,179 [INFO ]  ChibiOS: 0997003f
+2026-03-03 10:07:22,180 [INFO ]  Pixhawk1 0033001E 31355104 33333832
+2026-03-03 10:07:23,263 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-03-03 10:07:24,266 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-03-03 10:07:25,268 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-03-03 10:07:25,469 [INFO ]  Device connected.
+2026-03-03 10:07:25,470 [INFO ]  Device version: APM:Rover-None.None.NoneUnknownReleaseType, log=
+2026-03-03 10:08:23,148 [INFO ]  Connecting to device /dev/ttyACM0 with baud rate 115200...
+2026-03-03 10:08:23,185 [DEBUG]  mav recv error: invalid MAVLink prefix '0'
+2026-03-03 10:08:23,223 [INFO ]  Throttle armed
+2026-03-03 10:08:23,224 [INFO ]  Throttle disarmed
+2026-03-03 10:08:23,311 [INFO ]  ArduRover V4.0.0 (0e52bafa)
+2026-03-03 10:08:23,312 [INFO ]  ChibiOS: 0997003f
+2026-03-03 10:08:23,312 [INFO ]  Pixhawk1 0033001E 31355104 33333832
+2026-03-03 10:08:24,389 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-03-03 10:08:25,392 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-03-03 10:08:26,394 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-03-03 10:08:26,596 [INFO ]  Device connected.
+2026-03-03 10:08:26,597 [INFO ]  Device version: APM:Rover-None.None.NoneUnknownReleaseType, log=
+2026-03-03 10:08:59,274 [INFO ]  Throttle armed
+2026-03-03 10:28:27,777 [INFO ]  Connecting to device /dev/ttyACM0 with baud rate 115200...
+2026-03-03 10:28:28,090 [DEBUG]  mav recv error: invalid MAVLink prefix '165'
+2026-03-03 10:28:28,127 [INFO ]  Throttle armed
+2026-03-03 10:28:28,128 [INFO ]  Throttle disarmed
+2026-03-03 10:28:28,215 [INFO ]  ArduRover V4.0.0 (0e52bafa)
+2026-03-03 10:28:28,216 [INFO ]  ChibiOS: 0997003f
+2026-03-03 10:28:28,217 [INFO ]  Pixhawk1 0033001E 31355104 33333832
+2026-03-03 10:28:29,295 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-03-03 10:28:30,299 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-03-03 10:28:31,302 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-03-03 10:28:31,703 [INFO ]  Device connected.
+2026-03-03 10:28:31,704 [INFO ]  Device version: APM:Rover-None.None.NoneUnknownReleaseType, log=
+2026-03-03 10:31:42,177 [INFO ]  Connecting to device /dev/ttyACM0 with baud rate 115200...
+2026-03-03 10:31:42,214 [DEBUG]  mav recv error: invalid MAVLink prefix '0'
+2026-03-03 10:31:42,336 [INFO ]  ArduRover V4.0.0 (0e52bafa)
+2026-03-03 10:31:42,337 [INFO ]  ChibiOS: 0997003f
+2026-03-03 10:31:42,337 [INFO ]  Pixhawk1 0033001E 31355104 33333832
+2026-03-03 10:31:43,419 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-03-03 10:31:44,422 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-03-03 10:31:45,424 [DEBUG]  Still waiting for data from vehicle: parameters
+2026-03-03 10:31:45,825 [INFO ]  Device connected.
+2026-03-03 10:31:45,827 [INFO ]  Device version: APM:Rover-None.None.NoneUnknownReleaseType, log=
+2026-03-03 10:31:49,879 [INFO ]  Throttle armed
