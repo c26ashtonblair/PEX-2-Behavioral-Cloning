@@ -16,7 +16,8 @@ MODEL_NAME = "models/rover_model_02_ver01_final.h5"
 # Rover driving command limits
 MIN_STEERING, MAX_STEERING = 1000, 2000
 MIN_THROTTLE, MAX_THROTTLE = 1500, 2000
-SAFE_MIN_THROTTLE, SAFE_MAX_THROTTLE = 1300, 1550
+NEUTRAL_THROTTLE = 1500
+SAFE_MIN_THROTTLE, SAFE_MAX_THROTTLE = 1500, 1550
 MAX_THROTTLE_STEP = 8
 WARMUP_FRAMES = 25
 
@@ -182,7 +183,7 @@ def main():
 
         print("Camera pipeline started. Entering drive loop.")
         frame_count = 0
-        last_throttle = SAFE_MIN_THROTTLE
+        last_throttle = NEUTRAL_THROTTLE
         # debug_saved = 0
         # debug_dir = None
         # if SAVE_DEBUG_FRAMES:
@@ -212,7 +213,7 @@ def main():
 
             # Keep throttle neutral briefly after arming while camera/model stabilize.
             if frame_count < WARMUP_FRAMES:
-                throttle = SAFE_MIN_THROTTLE
+                throttle = NEUTRAL_THROTTLE
             else:
                 # Rate-limit throttle increase/decrease to avoid sudden acceleration.
                 throttle_delta = int(np.clip(throttle - last_throttle, -MAX_THROTTLE_STEP, MAX_THROTTLE_STEP))
