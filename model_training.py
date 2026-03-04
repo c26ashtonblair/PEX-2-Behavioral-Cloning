@@ -23,9 +23,9 @@ from tensorflow.keras.callbacks import ModelCheckpoint
 from matplotlib import pyplot
 
 # Configuration parameters
-DEVICE = "/CPU:0"  # Device to use for computation. Change to "/GPU:0" if GPU is available
+DEVICE = "/GPU:0"  # Device to use for computation. Change to "/GPU:0" if GPU is available
 DATA_PATH = "/home/usafa/Documents/PEX02/rover_data_processed"  # Path to processed data
-MODEL_NUM = 1 # Model number for naming
+MODEL_NUM = 2 # Model number for naming
 TRAINING_VER = 1  # Training version for naming
 NUM_EPOCHS = 5  # Number of epochs to train
 BATCH_SIZE = 13  # Batch size for training

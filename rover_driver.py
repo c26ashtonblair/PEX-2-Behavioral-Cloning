@@ -10,11 +10,14 @@ import tensorflow as tf
 import utilities.drone_lib as dl
 
 # Path to the trained model weights
-MODEL_NAME = "models/rover_model_01_ver01_final.h5"
+MODEL_NAME = "models/rover_model_02_ver01_final.h5"
 
 # Rover driving command limits
 MIN_STEERING, MAX_STEERING = 1000, 2000
 MIN_THROTTLE, MAX_THROTTLE = 1500, 2000
+SAFE_MIN_THROTTLE, SAFE_MAX_THROTTLE = 1500, 1580
+MAX_THROTTLE_STEP = 8
+WARMUP_FRAMES = 25
 
 """
 HINT:  Get values to the above by querying your own rover...
@@ -137,7 +140,7 @@ def set_rover_data(rover, steering, throttle):
 def check_inputs(steering, throttle):
     """Check and clamp the steering and throttle inputs to their allowed ranges."""
     steering = np.clip(steering, MIN_STEERING, MAX_STEERING)
-    throttle = np.clip(throttle, MIN_THROTTLE, MAX_THROTTLE)
+    throttle = np.clip(throttle, SAFE_MIN_THROTTLE, SAFE_MAX_THROTTLE)
     return steering, throttle
 
 def main():
@@ -169,6 +172,8 @@ def main():
         pipeline = initialize_pipeline()
 
         print("Camera pipeline started. Entering drive loop.")
+        frame_count = 0
+        last_throttle = SAFE_MIN_THROTTLE
         
         while rover.armed:
             processed_image = get_video_data(pipeline)
@@ -182,6 +187,17 @@ def main():
             # Model outputs normalized labels [steering, throttle]
             steering, throttle = denormalize(output[0][0], output[0][1])
             steering, throttle = check_inputs(int(steering), int(throttle))
+
+            # Keep throttle neutral briefly after arming while camera/model stabilize.
+            if frame_count < WARMUP_FRAMES:
+                throttle = SAFE_MIN_THROTTLE
+            else:
+                # Rate-limit throttle increase/decrease to avoid sudden acceleration.
+                throttle_delta = int(np.clip(throttle - last_throttle, -MAX_THROTTLE_STEP, MAX_THROTTLE_STEP))
+                throttle = int(last_throttle + throttle_delta)
+
+            frame_count += 1
+            last_throttle = throttle
 
             # Send predicted values to rover
             set_rover_data(rover, steering, throttle)
