@@ -29,7 +29,7 @@ import os
 
 # Default settings for telemetry connection and data storage
 DEFAULT_BAUD = 115200  # Default baud rate for telemetry connection
-DEFAULT_DATA_PATH = '/media/usafa/data/rover_data/'  # Default directory for storing rover data
+DEFAULT_DATA_PATH = 'home/usafa/rover_data_slow/'  # Default directory for storing rover data
 # Experimenting with different telemetry ports
 # DEFAULT_PORT = "/dev/ttyUSB0"  # USB connection
 DEFAULT_PORT = "/dev/ttyACM0"  # Serial connection
