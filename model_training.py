@@ -24,16 +24,16 @@ from matplotlib import pyplot
 
 # Configuration parameters
 DEVICE = "/GPU:0"  # Device to use for computation. Change to "/GPU:0" if GPU is available
-DATA_PATH = "/home/usafa/Documents/PEX02/rover_data_processed"  # Path to processed data
-MODEL_NUM = 2 # Model number for naming
+DATA_PATH = "/home/usafa/Downloads/CS472/PEX-2-Behavioral-Cloning/rover_data_processed"  # Path to processed data
+MODEL_NUM = 3 # Model number for naming
 TRAINING_VER = 1  # Training version for naming
-NUM_EPOCHS = 5  # Number of epochs to train
+NUM_EPOCHS = 50  # Number of epochs to train
 BATCH_SIZE = 13  # Batch size for training
 TRAIN_VAL_SPLIT = 0.8  # Train/validation split ratio
 
 
 # Define the CNN model structure for steering/throttle regression
-def define_model(input_shape=(80, 160)):
+def define_model(input_shape=(100, 160)):
     model = Sequential(
         [
             Input(shape=input_shape),
@@ -91,7 +91,7 @@ def train_model(amt_data=1.0):
     with tf.device(DEVICE):
 
         # Input shape must match preprocessed image size (80x160 grayscale).
-        model = define_model(input_shape=(80, 160))
+        model = define_model(input_shape=(100, 160))
         model.summary()  # Print a summary of the model architecture
         
         # Path for saving the best model checkpoints

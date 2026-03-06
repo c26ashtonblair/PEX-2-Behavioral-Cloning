@@ -12,8 +12,8 @@ import os
 from imutils.video import FPS
 
 # Paths for source and destination data
-SOURCE_PATH = "/home/usafa/Documents/PEX02/rover_data_slow"
-DEST_PATH = "/home/usafa/Documents/PEX02/rover_data_processed"
+SOURCE_PATH = "/home/usafa/Downloads/CS472/PEX-2-Behavioral-Cloning/rover_data_slow"
+DEST_PATH = "/home/usafa/Downloads/CS472/PEX-2-Behavioral-Cloning/rover_data_processed"
 
 # Parameters for image processing
 # Define the range of white values to be considered for binary conversion
@@ -21,7 +21,7 @@ white_L, white_H = 200, 255
 # Resize dimensions (quarter of 640x480)
 resize_W, resize_H = 160, 120
 # Crop dimensions to focus on relevant parts of the image
-crop_W, crop_B, crop_T = 160, 120, 0  # Crop from top third down
+crop_W, crop_B, crop_T = 160, 120, 20  # Crop from top third down
 PNG_COMPRESSION = 1  # 0-9 (lower is faster, larger files)
 
 def load_telem_file(path):
