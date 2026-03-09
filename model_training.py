@@ -24,10 +24,11 @@ from matplotlib import pyplot
 
 # Configuration parameters
 DEVICE = "/GPU:0"  # Device to use for computation. Change to "/GPU:0" if GPU is available
-DATA_PATH = "/home/usafa/Downloads/CS472/PEX-2-Behavioral-Cloning/rover_data_processed"  # Path to processed data
-MODEL_NUM = 3 # Model number for naming
-TRAINING_VER = 1  # Training version for naming
-NUM_EPOCHS = 50  # Number of epochs to train
+DEFAULT_DATA_PATH = "/home/usafa/Downloads/CS472/data/rover_data_processed"
+DATA_PATH = os.getenv("ROVER_DATA_PATH", DEFAULT_DATA_PATH)  # Path to processed data
+MODEL_NUM = 4 # Model number for naming
+TRAINING_VER = 2  # Training version for naming
+NUM_EPOCHS = 30  # Number of epochs to train
 BATCH_SIZE = 13  # Batch size for training
 TRAIN_VAL_SPLIT = 0.8  # Train/validation split ratio
 
